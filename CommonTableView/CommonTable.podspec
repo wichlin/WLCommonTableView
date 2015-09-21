@@ -9,5 +9,5 @@ s.platform     = :ios, '6.0'
 s.source       = { :git => "https://github.com/wichlin/WLCommonTableView.git", :tag => "1.0" }
 s.source_files = 'CommonTableView/WLCommonTableView/*.{h,m}'
 s.framework    = 'Foundation', 'CoreGraphics', 'UIKit'
-s.requires_arc = true
+s.requires_arc = true 
 end

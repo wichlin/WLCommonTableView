@@ -27,6 +27,9 @@
     [self.tableView bindCellType:MyTableViewCellTypeNumber withClass:[TableViewCellText2 class]];
     [self.tableView bindSectionType:MyTableSectionTypeHeader1 withClass:[SectionHeaderView class]];
     [self.tableView bindSectionType:MyTableSectionTypeHeader2 withClass:[SectionheaderView2 class]];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    }
 }
 
 - (void)handleData{

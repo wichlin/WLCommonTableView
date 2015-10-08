@@ -81,8 +81,9 @@
 }
 
 - (void)bindCellType:(NSUInteger)cellType withClass:(Class)cls{
-    NSAssert((cls != NULL && [cls conformsToProtocol:@protocol(WLCommonTableCellProtocol) ]), @"cell view assert");
+    NSAssert((cls != NULL && [cls conformsToProtocol:@protocol(WLCommonTableCellProtocol)]), @"cell view assert");
     [self setValue:cls forKey:cellType toDictionary:self.bindedCellTypeDict];
+    [self registerClass:cls forCellReuseIdentifier:[NSString stringWithFormat:@"%u", (unsigned int)cellType]];
 }
 
 - (ClassTypeItem *)classTypeForKey:(NSUInteger)key fromDictionaty:(NSDictionary *)dict{
@@ -145,12 +146,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     id<WLCommonTableCellDataProtocol> cellData = [self cellDataAtIndexPath:indexPath];
-    NSString* reuseId = [NSString stringWithFormat:@"cell_%ld", [cellData dataType]];
-    UITableViewCell<WLCommonTableCellProtocol> *cell = (UITableViewCell<WLCommonTableCellProtocol> *)[tableView dequeueReusableCellWithIdentifier:reuseId];
-    if (!cell){
-        ClassTypeItem* typeItem = [self classTypeForKey:[cellData dataType] fromDictionaty:self.bindedCellTypeDict];
-        cell = [[typeItem.cls alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
-    }
+    NSString* reuseId = [NSString stringWithFormat:@"%u", (unsigned int)[cellData dataType]];
+    UITableViewCell<WLCommonTableCellProtocol> *cell = (UITableViewCell<WLCommonTableCellProtocol> *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     [cell updateCellWithData:cellData];
     return cell;
 }

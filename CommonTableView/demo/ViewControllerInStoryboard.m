@@ -1,35 +1,28 @@
 //
-//  ViewController.m
+//  ViewControllerInStoryboard.m
 //  CommonTableView
 //
-//  Created by wichlin on 15/7/3.
-//  Copyright (c) 2015年 wichlin. All rights reserved.
+//  Created by wichlin on 15/11/25.
+//  Copyright © 2015年 wichlin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewControllerInStoryboard.h"
 #import "WLCommonTableViewHeader.h"
 #import "MyTableDataModel.h"
 #import "TableViewCellText.h"
-#import "TableViewCellText2.h"
-#import "SectionHeaderView.h"
-#import "SectionheaderView2.h"
+#import "TableViewCellInStoryborad.h"
 
-@interface ViewController ()
-@property(nonatomic, strong) WLCommonTableView* tableView;
+@interface ViewControllerInStoryboard ()
+
 @end
 
-@implementation ViewController
+@implementation ViewControllerInStoryboard
+
 
 - (void)initTableView{
-    self.tableView = [[WLCommonTableView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.tableView];
-    [self.tableView bindCellType:MyTableViewCellTypeText withClass:[TableViewCellText class]];
-    [self.tableView bindCellType:MyTableViewCellTypeNumber withClass:[TableViewCellText2 class]];
-    [self.tableView bindSectionType:MyTableSectionTypeHeader1 withClass:[SectionHeaderView class]];
-    [self.tableView bindSectionType:MyTableSectionTypeHeader2 withClass:[SectionheaderView2 class]];
-//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-//        self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
-//    }
+    WLCommonTableView* commonTableView = (WLCommonTableView *)self.tableView;
+    [commonTableView bindCellType:MyTableViewCellTypeText withClass:[TableViewCellInStoryborad class] forCellReuseIdentifierInStoryboard:@"CellInStoryboard"];
+    [commonTableView bindCellType:MyTableViewCellTypeNumber withClass:[TableViewCellInStoryborad class] forCellReuseIdentifierInStoryboard:@"CellInStoryboard"];
 }
 
 - (void)handleData{
@@ -55,9 +48,9 @@
     [dataSource addObject:sectionData];
     [dataSource addObject:sectionData2];
     
-    
-    self.tableView.datas = (NSArray<WLCommonTableSectionData> *)dataSource;
-    [self.tableView reloadData];
+    WLCommonTableView* commonTableView = (WLCommonTableView *)self.tableView;
+    commonTableView.datas = (NSArray<WLCommonTableSectionData> *)dataSource;
+    [commonTableView reloadData];
 }
 
 - (void)viewDidLoad {

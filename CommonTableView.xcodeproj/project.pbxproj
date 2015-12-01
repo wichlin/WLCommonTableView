@@ -10,6 +10,8 @@
 		0F221DB71B9EE3E40069AACE /* CommonTable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0F221DB61B9EE3E40069AACE /* CommonTable.podspec */; };
 		0F221DC11B9EE8C90069AACE /* WLCommonTableSectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F221DBC1B9EE8C90069AACE /* WLCommonTableSectionData.m */; };
 		0F221DC21B9EE8C90069AACE /* WLCommonTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F221DBF1B9EE8C90069AACE /* WLCommonTableView.m */; };
+		0F9FE8FF1C05B6F70006DC6E /* TableViewCellInStoryborad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FE8FE1C05B6F70006DC6E /* TableViewCellInStoryborad.m */; };
+		0F9FE9021C05B82C0006DC6E /* ViewControllerInStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FE9011C05B82C0006DC6E /* ViewControllerInStoryboard.m */; };
 		0FDD7D1B1B4621B600292A39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD7D1A1B4621B600292A39 /* main.m */; };
 		0FDD7D1E1B4621B600292A39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD7D1D1B4621B600292A39 /* AppDelegate.m */; };
 		0FDD7D241B4621B600292A39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDD7D221B4621B600292A39 /* Main.storyboard */; };
@@ -44,6 +46,10 @@
 		0F221DBE1B9EE8C90069AACE /* WLCommonTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCommonTableView.h; sourceTree = "<group>"; };
 		0F221DBF1B9EE8C90069AACE /* WLCommonTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLCommonTableView.m; sourceTree = "<group>"; };
 		0F221DC01B9EE8C90069AACE /* WLCommonTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCommonTableViewHeader.h; sourceTree = "<group>"; };
+		0F9FE8FD1C05B6F70006DC6E /* TableViewCellInStoryborad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellInStoryborad.h; sourceTree = "<group>"; };
+		0F9FE8FE1C05B6F70006DC6E /* TableViewCellInStoryborad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellInStoryborad.m; sourceTree = "<group>"; };
+		0F9FE9001C05B82C0006DC6E /* ViewControllerInStoryboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerInStoryboard.h; sourceTree = "<group>"; };
+		0F9FE9011C05B82C0006DC6E /* ViewControllerInStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerInStoryboard.m; sourceTree = "<group>"; };
 		0FDD7D151B4621B600292A39 /* CommonTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDD7D191B4621B600292A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FDD7D1A1B4621B600292A39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,8 +181,12 @@
 				0FDD7D841B466EB900292A39 /* SectionHeaderView.m */,
 				0FDD7D901B466F4800292A39 /* SectionheaderView2.h */,
 				0FDD7D911B466F4800292A39 /* SectionheaderView2.m */,
+				0F9FE8FD1C05B6F70006DC6E /* TableViewCellInStoryborad.h */,
+				0F9FE8FE1C05B6F70006DC6E /* TableViewCellInStoryborad.m */,
 				0FDD7D891B466EB900292A39 /* ViewController.h */,
 				0FDD7D8A1B466EB900292A39 /* ViewController.m */,
+				0F9FE9001C05B82C0006DC6E /* ViewControllerInStoryboard.h */,
+				0F9FE9011C05B82C0006DC6E /* ViewControllerInStoryboard.m */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -285,12 +295,14 @@
 				0FDD7D8E1B466EB900292A39 /* TableViewCellText2.m in Sources */,
 				0FDD7D8C1B466EB900292A39 /* SectionHeaderView.m in Sources */,
 				0FDD7D921B466F4800292A39 /* SectionheaderView2.m in Sources */,
+				0F9FE8FF1C05B6F70006DC6E /* TableViewCellInStoryborad.m in Sources */,
 				0FDD7D8D1B466EB900292A39 /* TableViewCellText.m in Sources */,
 				0FDD7D8F1B466EB900292A39 /* ViewController.m in Sources */,
 				0FDD7D1E1B4621B600292A39 /* AppDelegate.m in Sources */,
 				0FDD7D8B1B466EB900292A39 /* MyTableDataModel.m in Sources */,
 				0FDD7D1B1B4621B600292A39 /* main.m in Sources */,
 				0F221DC11B9EE8C90069AACE /* WLCommonTableSectionData.m in Sources */,
+				0F9FE9021C05B82C0006DC6E /* ViewControllerInStoryboard.m in Sources */,
 				0F221DC21B9EE8C90069AACE /* WLCommonTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

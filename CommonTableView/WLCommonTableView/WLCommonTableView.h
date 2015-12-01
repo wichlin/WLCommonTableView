@@ -20,4 +20,6 @@
 @property(nonatomic, strong) NSArray<WLCommonTableSectionData> *datas;
 - (void)bindSectionType:(NSUInteger)sectionType withClass:(Class)cls;
 - (void)bindCellType:(NSUInteger)cellType withClass:(Class)cls;
+- (void)bindCellType:(NSUInteger)cellType withClass:(Class)cls Nib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier;
+- (void)bindCellType:(NSUInteger)cellType withClass:(Class)cls forCellReuseIdentifierInStoryboard:(NSString *)identifier;
 @end

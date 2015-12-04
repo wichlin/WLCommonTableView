@@ -30,7 +30,7 @@
 + (CGFloat)cellHeightWithData:(id)cellData maxWidth:(CGFloat)maxWidth{
     return 50;
 }
-- (void)updateCellWithData:(id<TabelCellDataNumberProtocol>)cellData{
+- (void)updateCellWithData:(id<TableCellDataNumberProtocol>)cellData{
     _label.text = [cellData title];
 }
 

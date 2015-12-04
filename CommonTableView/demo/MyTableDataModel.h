@@ -18,20 +18,24 @@ typedef NS_ENUM(NSUInteger, MyTableSectionType) {
     MyTableSectionTypeHeader2,
 };
 
-@protocol TabelCellDataTextProtocol <NSObject>
+typedef NS_ENUM(NSUInteger, MyTableCellEventType) {
+    MyTableCellEventButtonClick,
+};
+
+@protocol TableCellDataTextProtocol <NSObject>
 - (NSString *)title;
 @end
 
-@interface TableCellDataText : NSObject <WLCommonTableCellDataProtocol, TabelCellDataTextProtocol>
+@interface TableCellDataText : NSObject <WLCommonTableCellDataProtocol, TableCellDataTextProtocol>
 @property(nonatomic, strong) NSString* data;
 @end
 
 
-@protocol TabelCellDataNumberProtocol <NSObject>
+@protocol TableCellDataNumberProtocol <NSObject>
 - (NSString *)title;
 @end
 
-@interface TableCellDataNumber : NSObject <WLCommonTableCellDataProtocol, TabelCellDataNumberProtocol>
+@interface TableCellDataNumber : NSObject <WLCommonTableCellDataProtocol, TableCellDataNumberProtocol>
 @property(nonatomic, strong) NSNumber* data;
 @end
 

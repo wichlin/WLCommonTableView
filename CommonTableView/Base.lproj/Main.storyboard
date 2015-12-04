@@ -75,6 +75,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vb7-RQ-VaW" kind="relationship" relationship="viewControllers" id="geC-Pc-kPW"/>
+                        <segue destination="fPC-E2-ROU" kind="relationship" relationship="viewControllers" id="qtb-gA-qfC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6g-Mf-Xsz" userLabel="First Responder" sceneMemberID="firstResponder"/>

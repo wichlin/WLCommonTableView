@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIKit.h>
+
+@protocol WLCommonTableCellEventDelegate;
 
 @protocol WLCommonTableCellProtocol <NSObject>
 
@@ -16,5 +19,14 @@
 
 @optional
 - (void)updateCellWithData:(id)cellData;
+- (void)setEventDelegate:(id<WLCommonTableCellEventDelegate>)delegate;
+
+@end
+
+
+@protocol WLCommonTableCellEventDelegate <NSObject>
+
+@optional
+- (void)tableViewCell:(UITableViewCell *)cell triggerEvent:(NSUInteger)eventId cellData:(id)cellData;
 
 @end

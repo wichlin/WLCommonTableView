@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WLCommonTableSectionData.h"
+#import "WLCommonTableCellProtocol.h"
 
 @class WLCommonTableView;
 @protocol WLCommonTableViewDelegate <NSObject>
@@ -17,6 +18,7 @@
 
 @interface WLCommonTableView : UITableView
 @property(nonatomic, weak) id<WLCommonTableViewDelegate> commontTableDelegate;
+@property(nonatomic, weak) id<WLCommonTableCellEventDelegate> cellEventDelegate;
 @property(nonatomic, strong) NSArray<WLCommonTableSectionData> *datas;
 - (void)bindSectionType:(NSUInteger)sectionType withClass:(Class)cls;
 - (void)bindCellType:(NSUInteger)cellType withClass:(Class)cls;

@@ -14,14 +14,15 @@
 #import "SectionHeaderView.h"
 #import "SectionheaderView2.h"
 
-@interface ViewController ()
+@interface ViewController ()<WLCommonTableCellEventDelegate>
 @property(nonatomic, strong) WLCommonTableView* tableView;
 @end
 
 @implementation ViewController
 
 - (void)initTableView{
-    self.tableView = [[WLCommonTableView alloc] initWithFrame:self.view.bounds];
+    _tableView = [[WLCommonTableView alloc] initWithFrame:self.view.bounds];
+    _tableView.cellEventDelegate = self;
     [self.view addSubview:self.tableView];
     [self.tableView bindCellType:MyTableViewCellTypeText withClass:[TableViewCellText class]];
     [self.tableView bindCellType:MyTableViewCellTypeNumber withClass:[TableViewCellText2 class]];
@@ -69,6 +70,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - WLCommonTableCellEventDelegate
+- (void)tableViewCell:(UITableViewCell *)cell triggerEvent:(NSUInteger)eventId cellData:(id)cellData {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"trigger event %lud", eventId] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+    [alertView show];
 }
 
 @end

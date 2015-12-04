@@ -178,6 +178,9 @@
     ClassTypeItem *typeItem = [self classTypeForKey:[cellData dataType] fromDictionaty:self.bindedCellTypeDict];
     UITableViewCell<WLCommonTableCellProtocol> *cell = (UITableViewCell<WLCommonTableCellProtocol> *)[tableView dequeueReusableCellWithIdentifier:typeItem.reuseIdentifier forIndexPath:indexPath];
     [cell updateCellWithData:cellData];
+    if ([cell respondsToSelector:@selector(setEventDelegate:)]) {
+        [cell setEventDelegate:self.cellEventDelegate];
+    }
     return cell;
 }
 

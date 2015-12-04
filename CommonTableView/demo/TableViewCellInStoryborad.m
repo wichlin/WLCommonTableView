@@ -30,7 +30,7 @@
     return 100;
 }
 
-- (void)updateCellWithData:(id<TabelCellDataNumberProtocol>)cellData{
+- (void)updateCellWithData:(id<TableCellDataNumberProtocol>)cellData{
     self.label.text = [cellData title];
 }
 
